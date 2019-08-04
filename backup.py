@@ -49,13 +49,13 @@ def live_extractor(data, list)
 end
 
 def nyc_pigeon_organizer(data)
-  pigeon_list = name_extractor(pigeon_data)
+  pigeon_list = name_extractor(data)
 
-  pigeon_list = color_extractor(pigeon_data, pigeon_list)
+  pigeon_list = color_extractor(data, pigeon_list)
 
-  pigeon_list = gender_extractor(pigeon_data, pigeon_list)
+  pigeon_list = gender_extractor(data, pigeon_list)
 
-  pigeon_list =  live_extractor(pigeon_data, pigeon_list)
+  pigeon_list =  live_extractor(data, pigeon_list)
   
   pigeon_list
 end
