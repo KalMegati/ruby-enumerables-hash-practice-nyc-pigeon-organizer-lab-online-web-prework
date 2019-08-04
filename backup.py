@@ -40,8 +40,8 @@ def live_extractor(data, list)
   x_lives = data[:lives].keys
   list.keys.length.times { |index|
     x_lives.each { |y_live|
-      if data[:live][y_live].include? list.keys[index]
-        list[list.keys[index]][:live].push(y_live.to_s)
+      if data[:lives][y_live].include? list.keys[index]
+        list[list.keys[index]][:lives].push(y_live)
       end
     }
   }
@@ -49,7 +49,15 @@ def live_extractor(data, list)
 end
 
 def nyc_pigeon_organizer(data)
-  # write your code here!
+  pigeon_list = name_extractor(pigeon_data)
+
+  pigeon_list = color_extractor(pigeon_data, pigeon_list)
+
+  pigeon_list = gender_extractor(pigeon_data, pigeon_list)
+
+  pigeon_list =  live_extractor(pigeon_data, pigeon_list)
+  
+  pigeon_list
 end
 
 pigeon_data = {
@@ -77,4 +85,6 @@ pigeon_list = color_extractor(pigeon_data, pigeon_list)
 
 pigeon_list = gender_extractor(pigeon_data, pigeon_list)
 
-live_extractor(pigeon_data, pigeon_list)
+pigeon_list =  live_extractor(pigeon_data, pigeon_list)
+
+print pigeon_list
