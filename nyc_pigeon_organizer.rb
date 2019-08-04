@@ -77,4 +77,4 @@ pigeon_list = color_extractor(pigeon_data, pigeon_list)
 
 pigeon_list = gender_extractor(pigeon_data, pigeon_list)
 
-live_extractor(pigeon_data, pigeon_list)
+print live_extractor(pigeon_data, pigeon_list)
