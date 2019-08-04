@@ -34,8 +34,6 @@ def gender_extractor(data,list)
   list
 end
 
-### correct so far
-
 def live_extractor(data, list)
   x_lives = data[:lives].keys
   list.keys.length.times { |index|
@@ -59,32 +57,3 @@ def nyc_pigeon_organizer(data)
   
   pigeon_list
 end
-
-pigeon_data = {
-  :color => {
-    :purple => ["Theo", "Peter Jr.", "Lucky"],
-    :grey => ["Theo", "Peter Jr.", "Ms. K"],
-    :white => ["Queenie", "Andrew", "Ms. K", "Alex"],
-    :brown => ["Queenie", "Alex"]
-  },
-  :gender => {
-    :male => ["Alex", "Theo", "Peter Jr.", "Andrew", "Lucky"],
-    :female => ["Queenie", "Ms. K"]
-  },
-  :lives => {
-    "Subway" => ["Theo", "Queenie"],
-    "Central Park" => ["Alex", "Ms. K", "Lucky"],
-    "Library" => ["Peter Jr."],
-    "City Hall" => ["Andrew"]
-  }
-}
-
-pigeon_list = name_extractor(pigeon_data)
-
-pigeon_list = color_extractor(pigeon_data, pigeon_list)
-
-pigeon_list = gender_extractor(pigeon_data, pigeon_list)
-
-pigeon_list =  live_extractor(pigeon_data, pigeon_list)
-
-print pigeon_list
