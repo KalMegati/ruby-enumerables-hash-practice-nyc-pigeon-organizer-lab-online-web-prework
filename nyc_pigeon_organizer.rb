@@ -40,8 +40,8 @@ def live_extractor(data, list)
   x_lives = data[:lives].keys
   list.keys.length.times { |index|
     x_lives.each { |y_live|
-      if data[:live][y_live].include? list.keys[index]
-        list[list.keys[index]][:live].push(y_live)
+      if data[:lives][y_live].include? list.keys[index]
+        list[list.keys[index]][:lives].push(y_live)
       end
     }
   }
